@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BG Video Vacation Site</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <video autoplay loop muted plays-inline id="avideo">
+        <source
+          src="https://player.vimeo.com/external/432616880.sd.mp4?s=899675f1e89e926e315a778763e4e395a98fb548&profile_id=139&oauth2_token_id=57447761"
+          type="video/mp4"
+        />
+      </video>
+      <div class="logo">
+        <img src="img/wb.png" alt="logo" />
+      </div>
+      <div class="sidebar">
+        <div class="text-box">
+          <h1>SidewaysandUp Shop</h1>
+          <h4>Luxury Living</h4>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Maldives</h1>
+        <p>Beautiful Condos in the Heart of Maldives</p>
+        <div class="btn" id="playBtn">
+          <img src="img/play.png" id="icon" /> Watch Video
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const avideo = document.getElementById("avideo");
+      const playBtn = document.getElementById("playBtn");
+      const icon = document.getElementById("icon");
+
+      playBtn.onclick = function () {
+        avideo.style.display = "block";
+
+        if (avideo.paused) {
+          avideo.play();
+          icon.src = "img/pause.png";
+        } else {
+          avideo.pause();
+          icon.src = "img/play.png";
+        }
+      };
+    </script>
+  </body>
+</html>
